@@ -5,6 +5,38 @@ class Book {
   }
 }
 
+let books;
+// SavedBooks Class: Handles Storage
+class SavedBooks {
+  static getBooks() {
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
+  }
+
+  static addBook(book) {
+    const books = SavedBooks.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(bookTitle) {
+    const books = SavedBooks.getBooks();
+
+    books.forEach((book, index) => {
+      if (book.bookTitle === bookTitle) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+}
+
 // BookUserInterface Class: Handle BookUserInterface Tasks
 class BookUserInterface {
   static displayBooks() {
@@ -40,38 +72,6 @@ class BookUserInterface {
   }
 }
 
-// SavedBooks Class: Handles Storage
-class SavedBooks {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-
-    return books;
-  }
-
-  static addBook(book) {
-    const books = SavedBooks.getBooks();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static removeBook(bookTitle) {
-    const books = SavedBooks.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.bookTitle === bookTitle) {
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
-
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', BookUserInterface.displayBooks);
 
@@ -103,7 +103,9 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   BookUserInterface.removeBook(e.target);
 
   // Remove book from SavedBooks
-  SavedBooks.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
+  SavedBooks.removeBook(
+    e.target.previousElementSibling.previousElementSibling.textContent
+  );
 });
 
 const currentDate = new Date().toLocaleString();
@@ -113,6 +115,7 @@ document.getElementById('current-date').innerHTML = currentDate;
 const bookList = document.querySelector('.book-list-container');
 const listBtn = document.querySelector('.listBtn');
 const formContainer = document.querySelector('.form-container');
+const contactInfo = document.querySelector('.contact-info');
 
 listBtn.addEventListener('click', () => {
   bookList.style.display = 'block';
@@ -137,7 +140,6 @@ addNewBtn.addEventListener('click', () => {
 
 // display the  Contact section when click the button "Contact"
 const contactBtn = document.querySelector('.contact');
-const contactInfo = document.querySelector('.contact-info');
 
 contactBtn.addEventListener('click', () => {
   bookList.style.display = 'none';
