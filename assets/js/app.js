@@ -63,3 +63,30 @@ const displayBooks = () => {
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', displayBooks);
+
+// Event: Add a Book
+document.querySelector('#book-form').addEventListener('submit', (e) => {
+  // Prevent actual submit
+  e.preventDefault();
+  // Get form values
+  const bookTitle = document.querySelector('#bookTitle').value;
+  const bookAuthor = document.querySelector('#bookAuthor').value;
+  // Create unique id for each book
+  const index = Date.now();
+
+  // Instatiate book
+  const book = new Book(index, bookTitle, bookAuthor);
+
+  // Add Book to BookUserInterface
+  addBook(book);
+});
+
+// Event: Remove a Book
+listBooks.addEventListener('click', (e) => {
+  // Get the position of DOM parent element of the button clicked
+  const position = Array.from(e.target.parentNode.parentNode.children).indexOf(
+    e.target.parentNode,
+  );
+
+  removeBook(position);
+});
