@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>My Awesome Books</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>My Awesome Books</title>
-</head>
+  <body>
+    <main class="main-container">
+      <!-- book list section -->
+      <section class="book-list-container">
+        <h1>Awesome books</h1>
+        <div id="book-list"></div>
 
-<body>
-  <main class="main-container">
-    
-    <!-- book list section -->
-    <section class="book-list-container">
-      <h1>Awesome books</h1>
-      <div id="book-list"></div>
-    </section>
+        <!-- book form section -->
+        <section class="form-container">
+          <hr class="hr" />
+          <br />
+          <form id="book-form">
+            <input type="text" required placeholder="Title" id="bookTitle" />
+            <br />
+            <input type="text" required placeholder="author" id="bookAuthor" />
+            <br />
+            <button id="add-button" type="submit"><strong>Add</strong></button>
+          </form>
+        </section>
 
-    <!-- book form section -->
-    <section class="form-container">
-      <h2 class="add-text">Add a new book</h2>
-      <hr class="hr" />
-      <br />
-      <form id="book-form">
-        <input type="text" required placeholder="Title" id="bookTitle" />
-        <br />
-        <input type="text" required placeholder="author" id="bookAuthor" />
-        <br />
-        <button id="add-button" type="submit"><strong>Add</strong></button>
-      </form>
-    </section>
-
-    <!-- Footer section -->
-    <section>
-      <footer>
-        <p>
-          &copy;Copyright @2022 developed by <a href="https://github.com/MMGGYY66"
-            target="_blank"><strong>Mohamed</strong></a>
-          and
-          <a href="https://github.com/miltonHenschel" target="_blank"><strong>Henschel</strong>.</a>
-        </p>
-      </footer>
-    </section>
-  </main>
-  <script src="./assets/js/app.js"></script>
-</body>
+        <!-- Footer section -->
+        <section>
+          <footer>
+            <p>
+              &copy;Copyright @2022 developed by
+              <a href="https://github.com/MMGGYY66" target="_blank"
+                ><strong>Mohamed</strong></a
+              >
+              and
+              <a href="https://github.com/miltonHenschel" target="_blank"
+                ><strong>Henschel</strong>.</a
+              >
+            </p>
+          </footer>
+        </section>
+      </section>
+    </main>
+    <script src="./assets/js/app.js"></script>
+  </body>
 </html>
