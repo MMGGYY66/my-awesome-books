@@ -1,4 +1,188 @@
 * {
-  padding: 0;
+  border: 0;
   margin: 0;
+  padding: 0;
+
+  /* border-sizing: border-box; */
+}
+
+body {
+  text-align: center;
+  background: url("./images/books1.jpg");
+  opacity: 0.4;
+  color: black;
+}
+
+.main-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgb(255 255 255 / 90%);
+  border-radius: 20px;
+}
+
+h1,
+h2 {
+  padding: 2.8rem;
+  font-size: 24px;
+}
+
+.logo-container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 13px;
+  margin: 0;
+  gap: 0;
+}
+
+.hr {
+  width: 100px;
+  border: 1px solid gray;
+}
+
+form {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: end;
+  height: 420px;
+}
+
+#book-list {
+  display: flex;
+  text-align: center;
+  justify-items: center;
+  border: 2px solid gray;
+  flex-direction: column;
+  height: 426px;
+}
+
+.book-list-container {
+  display: none;
+  margin: 20px;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 350px;
+  padding: 5px;
+  border: 2px solid saddlebrown;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+span {
+  margin-right: 10px;
+}
+
+.bookList1 {
+  display: flex;
+  position: relative;
+  margin: 16px 12px;
+  border: 0;
+  outline: none;
+}
+
+.bookList1:nth-child(even) {
+  background: #ccc;
+}
+
+.bookList1:nth-child(odd) {
+  background: #fff;
+}
+
+.remove {
+  position: absolute;
+  right: 20px;
+  top: 20%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* nav */
+nav {
+  display: flex;
+  justify-content: start;
+  border: 2px solid gray;
+  padding: 0 10px;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.logo-text {
+  margin: 0 104px 0 0;
+  padding: 0;
+  font-weight: bold;
+
+  /* display: inline; */
+  font-size: 26px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  margin-left: 10px;
+  border-right: 2px solid gray;
+  padding: 4px 0;
+  padding-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.contact-info p,
+.contact-info li {
+  text-align: start;
+}
+
+nav li:hover {
+  color: blue;
+}
+
+.contact-info {
+  border: none;
+  padding: 16px 34px;
+  font-size: large;
+  height: 500px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.contact-info ul {
+  margin: 12px 32px;
+}
+
+.form-container {
+  display: none;
+}
+
+#current-date {
+  font-size: small;
+  text-align: right;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+footer {
+  border: 2px solid gray;
+  width: 700px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 66px;
+  padding: 14px 0;
 }

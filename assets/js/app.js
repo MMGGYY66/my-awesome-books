@@ -49,7 +49,7 @@ const displayBooks = () => {
   // Load book section dynamically
   books.forEach((book) => {
     const bookDisplay = document.createElement('div');
-    bookDisplay.className = `bookList${Date.now()}`;
+    bookDisplay.className = 'bookList1';
     bookDisplay.innerHTML = `
         <p class="bookTitle"><b>${book.bookTitle}</b></p>
         <p>by<span></span><b>${book.bookAuthor}.</b></p>
