@@ -96,7 +96,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 listBooks.addEventListener('click', (e) => {
   // Get the position of DOM parent element of the button clicked
   const position = Array.from(e.target.parentNode.parentNode.children).indexOf(
-    e.target.parentNode
+    e.target.parentNode,
   );
 
   removeBook(position);
