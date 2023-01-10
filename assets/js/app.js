@@ -10,12 +10,7 @@ let books;
 // SavedBooks Class: Handles Storage
 class SavedBooks {
   static getBooks() {
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-
+    books = JSON.parse(localStorage.getItem('books')) || []
     return books;
   }
 
@@ -109,38 +104,3 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   );
 });
 
-const currentDate = new Date().toLocaleString();
-document.getElementById('current-date').innerHTML = currentDate;
-
-// display the books list when click the button "List"
-const bookList = document.querySelector('.book-list-container');
-const listBtn = document.querySelector('.listBtn');
-const formContainer = document.querySelector('.form-container');
-
-listBtn.addEventListener('click', () => {
-  bookList.style.display = 'block';
-  formContainer.style.display = 'none';
-});
-
-window.addEventListener('load', () => {
-  bookList.style.display = 'block';
-  formContainer.style.display = 'none';
-});
-
-// display the Add book form  when click the button "Add new"
-const addNewBtn = document.querySelector('.add-new-btn');
-
-addNewBtn.addEventListener('click', () => {
-  bookList.style.display = 'none';
-  formContainer.style.display = 'block';
-});
-
-// display the  Contact section when click the button "Contact"
-const contactBtn = document.querySelector('.contact');
-const contactInfo = document.querySelector('.contact-info');
-
-contactBtn.addEventListener('click', () => {
-  bookList.style.display = 'none';
-  formContainer.style.display = 'none';
-  contactInfo.style.display = 'block';
-});
