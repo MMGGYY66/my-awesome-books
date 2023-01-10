@@ -8,7 +8,8 @@
 
 body {
   text-align: center;
-  background: url("./images/books1.jpg");
+  background: url(../images/books1.jpg) no-repeat center;
+  background-size: cover;
   opacity: 0.4;
   color: black;
 }
@@ -27,7 +28,7 @@ h2 {
 }
 
 .logo-container {
-  width: fit-content;
+  width: 100px;
   display: flex;
   align-items: center;
   padding: 13px;
@@ -41,7 +42,7 @@ h2 {
 }
 
 form {
-  width: fit-content;
+  width: 400px;
   margin: 0 auto;
   text-align: end;
   height: 420px;
@@ -57,8 +58,14 @@ form {
 }
 
 .book-list-container {
-  display: none;
+  display: flex;
+  flex-direction: column;
   margin: 20px;
+}
+
+p.bookTitle,
+p.bookAuthor {
+  font-size: 24px;
 }
 
 input {
@@ -92,8 +99,8 @@ span {
 
 .remove {
   position: absolute;
-  right: 20px;
-  top: 20%;
+  right: 0;
+  top: -25%;
   font-size: 20px;
   font-weight: bold;
 }
@@ -168,7 +175,7 @@ nav li:hover {
 }
 
 .form-container {
-  display: none;
+  display: block;
 }
 
 #current-date {
@@ -180,7 +187,7 @@ nav li:hover {
 
 footer {
   border: 2px solid gray;
-  width: 700px;
+  width: auto;
   box-sizing: border-box;
   text-align: center;
   height: 66px;
