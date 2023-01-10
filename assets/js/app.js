@@ -1,13 +1,26 @@
-function Book(bookTitle, bookAuthor) {
+function Book(index, bookTitle, bookAuthor) {
+  this.index = index;
   this.bookTitle = bookTitle;
   this.bookAuthor = bookAuthor;
 }
 
-let books;
+let books = [
+  // {
+  //   index: 1,
+  //   bookTitle: 'title1',
+  //   bookAuthor: 'author1',
+  // },
+  // {
+  //   index: 2,
+  //   bookTitle: 'title2',
+  //   bookAuthor: 'author2',
+  // },
+];
 
+// Load book from local storage
 const getBooks = () => {
   if (localStorage.getItem('books') === null) {
-    books = [];
+    localStorage.setItem('books', JSON.stringify(books));
   } else {
     books = JSON.parse(localStorage.getItem('books'));
   }
@@ -15,68 +28,46 @@ const getBooks = () => {
   return books;
 };
 
-const removeBtn = document.querySelector('.remove');
-
-removeBtn.addEventListener('click', (e) => {
-  let books = getBooks();
-
-  books.forEach((index) => {
-    if (e.target.className === 'remove') {
-      index = e.target;
-      books = books.filter((bk) => JSON.stringify(bk.id) !== id);
-      localStorage.setItem('local', JSON.stringify(book)); // LOCAL STORAGE
-      e.target.parentElement.remove();
-    }
-  });
-});
-
-const removeBook = () => {
-  if (removeBtn.classList.contains('remove')) {
-    books.splice(index, 1);
-    removeBtn.parentElement.remove();
-  }
+// Remove book
+const removeBook = (position) => {
+  const books = getBooks();
+  books.splice(position, 1);
 
   localStorage.setItem('books', JSON.stringify(books));
+  window.location.reload();
 };
 
+// Clear form fields
 const clearFields = () => {
   document.querySelector('#bookTitle').value = '';
   document.querySelector('#bookAuthor').value = '';
 };
 
+// Add book
 const addBook = (book) => {
   const books = getBooks();
   books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
-
-  const listBooks = document.querySelector('#book-list');
-
-  const bookDisplay = document.createElement('div');
-  bookDisplay.className = 'bookList1';
-  bookDisplay.innerHTML = `
-      <p class="bookTitle"><b>${book.bookTitle}</b></p>
-      <p>by<span></span><b>${book.bookAuthor}.</b></p>
-      <button class="remove">Remove</button>
-      `;
-
-  listBooks.appendChild(bookDisplay);
   clearFields();
+  localStorage.setItem('books', JSON.stringify(books));
+  window.location.reload();
 };
 
-// SavedBooks Class: Handles Storage
-const SavedBooks = () => {
-  // getBooks();
-  removeBook();
-  addBook();
-};
+const listBooks = document.querySelector('#book-list');
 
-window.addEventListener('DocumentContentLoaded', SavedBooks);
-
-// BookUserInterface Class: Handle BookUserInterface Tasks
+// Display book to UI
 const displayBooks = () => {
   const books = getBooks();
-
-  books.forEach((book) => addBook(book));
+  // Load book section dynamically
+  books.forEach((book) => {
+    const bookDisplay = document.createElement('div');
+    bookDisplay.className = `bookList${Date.now()}`;
+    bookDisplay.innerHTML = `
+        <p class="bookTitle"><b>${book.bookTitle}</b></p>
+        <p>by<span></span><b>${book.bookAuthor}.</b></p>
+        <button id="${Date.now()}" class="remove">Remove</button>
+        `;
+    listBooks.appendChild(bookDisplay);
+  });
 
   localStorage.setItem('books', JSON.stringify(books));
 };
@@ -88,24 +79,25 @@ document.addEventListener('DOMContentLoaded', displayBooks);
 document.querySelector('#book-form').addEventListener('submit', (e) => {
   // Prevent actual submit
   e.preventDefault();
-
   // Get form values
   const bookTitle = document.querySelector('#bookTitle').value;
   const bookAuthor = document.querySelector('#bookAuthor').value;
+  // Create unique id for each book
+  const index = Date.now();
 
   // Instatiate book
-  const book = new Book(bookTitle, bookAuthor);
+  const book = new Book(index, bookTitle, bookAuthor);
 
   // Add Book to BookUserInterface
   addBook(book);
 });
 
 // Event: Remove a Book
-document.querySelector('#book-list').addEventListener('click', (e) => {
-  // Remove book from BookUserInterface
-  // removeBook(e.target);
-  // Remove book from SavedBooks
-  // removeBook(
-  //   e.target.previousElementSibling.previousElementSibling.textContent
-  // );
+listBooks.addEventListener('click', (e) => {
+  // Get the position of DOM parent element of the button clicked
+  const position = Array.from(e.target.parentNode.parentNode.children).indexOf(
+    e.target.parentNode
+  );
+
+  removeBook(position);
 });
