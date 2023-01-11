@@ -8,7 +8,6 @@
 
 - [my-awesome-books](#my-awesome-books)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[my-first-capstone\] ](#-my-first-capstone-)
 - [📖 \[🎯 my-awesome-books ](#--my-awesome-books-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
