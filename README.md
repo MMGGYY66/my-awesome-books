@@ -97,7 +97,7 @@ To get a local copy up and running follow these simple example steps.
 
 - npm install --save-dev hint@6.x
 - npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-- npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+- pm install --save-dev eslint  eslint-config-airbnb-base  eslint-plugin-import  babel-eslint
 
 ## Requirements
 
@@ -129,6 +129,8 @@ For stylelint error run:<code>sudo npx stylelint "\*_/_.{css,scss}" --fix</code>
 
 - GitHub: [@github](https://github.com/MMGGYY66)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-eldimardash-0023a3b5/)
+- Twitter: [twitter](https://twitter.com/MOHAMEDELDIMARd)
+- Facebook: [facebook](https://www.facebook.com/MOHAMED.ELDIMARDASH/)
 
 👥 Henschel Nketchogue M.
 
@@ -136,6 +138,7 @@ For stylelint error run:<code>sudo npx stylelint "\*_/_.{css,scss}" --fix</code>
 - LinkedIn: [henschelnketchoguem](https://www.linkedin.com/in/henschelnketchoguem/)
 - Twitter: [nketchogue](https://twitter.com/nketchogue)
 - Instagram: [mpatchiehenschel](https://www.instagram.com/mpatchiehenschel/)
+
   <!-- CONTRIBUTING -->
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,7 +148,6 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the issues page
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
 
@@ -156,7 +158,6 @@ Give a ⭐️ if you like this project!
 <p align="right"><a href="#readme-top">(back to top)</a></p>
 
 <!-- ACKNOWLEDGEMENTS -->
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭Acknowledgments <a name="acknowledgements"></a>
 
@@ -164,7 +165,6 @@ Give a ⭐️ if you like this project!
 - Spacial thank to [Cindy Shin](https://www.behance.net/gallery/29845175/CC-Global-Summit-2015) for his beautiful design.
 - Images uses in this project are from [figma](https://www.figma.com/file/V0vg37EZhAbP9nUPOeCy6p/HTML%2FCSS-%26-JavaScript-capstone-project---Conference-page?node-id=0%3A1&t=od5hoeaQE2tKg92Y-0).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
