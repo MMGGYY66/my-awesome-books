@@ -1,7 +1,7 @@
 {
   "name": "my-awesome-books",
   "version": "1.0.0",
-  "description": "",
+  "description": "<p id=\"readme-top\">My Microverse my-awesome-books project (Module two)</p>",
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,8 +20,8 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-config-airbnb-base": "^4.0.2",
+    "eslint-plugin-import": "^1.11.0",
     "hint": "^2.0.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",

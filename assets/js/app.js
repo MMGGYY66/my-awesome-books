@@ -1,4 +1,3 @@
-// targetting DOM elements
 const bookList = document.querySelector('.book-list-container');
 const listBtn = document.querySelector('.listBtn');
 
@@ -110,7 +109,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 
   // Remove book from SavedBooks
   SavedBooks.removeBook(
-    e.target.previousElementSibling.previousElementSibling.textContent
+    e.target.previousElementSibling.previousElementSibling.textContent,
   );
 });
 
