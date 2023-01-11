@@ -2,33 +2,37 @@
   border: 0;
   margin: 0;
   padding: 0;
-
-  /* border-sizing: border-box; */
 }
 
 body {
   text-align: center;
   background: url("../images/books1.jpg") no-repeat center;
   background-size: cover;
+  object-fit: cover;
+  height: 100vh;
   opacity: 0.4;
   color: black;
 }
 
 .main-container {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 100px auto;
   background: rgb(255 255 255 / 90%);
   border-radius: 20px;
 }
 
 h1,
 h2 {
-  padding: 2.8rem;
-  font-size: 24px;
+  width: 60%;
+  padding: 2.1rem 1rem 0.7rem;
+  margin: 0 auto;
+  font-size: 32px;
+  text-align: center;
+  border-bottom: 2px solid gray;
 }
 
 .logo-container {
-  width: 100px;
+  width: fit-content;
   display: flex;
   align-items: center;
   padding: 13px;
@@ -37,35 +41,29 @@ h2 {
 }
 
 .hr {
-  width: 100px;
-  border: 1px solid gray;
+  margin-bottom: 2rem;
 }
 
 form {
-  width: 400px;
+  width: fit-content;
   margin: 0 auto;
   text-align: end;
-  height: 420px;
+  object-fit: cover;
 }
 
 #book-list {
-  display: flex;
+  display: block;
   text-align: center;
   justify-items: center;
   border: 2px solid gray;
   flex-direction: column;
-  height: 426px;
+  overflow: scroll;
+  object-fit: cover;
 }
 
 .book-list-container {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-}
-
-p.bookTitle,
-p.bookAuthor {
-  font-size: 24px;
+  display: block;
+  margin: 0 auto;
 }
 
 input {
@@ -74,11 +72,12 @@ input {
   padding: 5px;
   border: 2px solid saddlebrown;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
+  border-radius: 16px;
 }
 
 span {
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .bookList1 {
@@ -86,23 +85,31 @@ span {
   position: relative;
   margin: 16px 12px;
   border: 0;
+  padding: 20px;
   outline: none;
+  border-radius: 20px;
+}
+
+p.bookTitle,
+p.bookAuthor {
+  font-size: 24px;
 }
 
 .bookList1:nth-child(even) {
-  background: #ccc;
+  background: #ddd;
 }
 
 .bookList1:nth-child(odd) {
-  background: #fff;
+  background: #aaa;
 }
 
 .remove {
   position: absolute;
-  right: 0;
-  top: -25%;
+  right: 20px;
+  top: 20%;
   font-size: 20px;
   font-weight: bold;
+  border-radius: 12px;
 }
 
 button {
@@ -123,12 +130,10 @@ nav {
 }
 
 .logo-text {
-  margin: 0 104px 0 0;
+  margin: 0 104px 0 6px;
   padding: 0;
-  font-weight: bold;
-
-  /* display: inline; */
-  font-size: 26px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 nav ul {
@@ -164,7 +169,6 @@ nav li:hover {
   border: none;
   padding: 16px 34px;
   font-size: large;
-  height: 500px;
   align-items: center;
   justify-items: center;
   justify-content: center;
@@ -175,7 +179,7 @@ nav li:hover {
 }
 
 .form-container {
-  display: block;
+  display: none;
 }
 
 #current-date {
@@ -187,7 +191,6 @@ nav li:hover {
 
 footer {
   border: 2px solid gray;
-  width: auto;
   box-sizing: border-box;
   text-align: center;
   height: 66px;

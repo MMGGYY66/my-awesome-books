@@ -1,3 +1,15 @@
+// targetting DOM elements
+const bookList = document.querySelector('.book-list-container');
+const listBtn = document.querySelector('.listBtn');
+
+const addNewBtn = document.querySelector('.add-new-btn');
+
+const formContainer = document.querySelector('.form-container');
+
+const contactBtn = document.querySelector('.contact');
+const contactInfo = document.querySelector('.contact-info');
+
+
 class Book {
   constructor(bookTitle, bookAuthor) {
     this.bookTitle = bookTitle;
@@ -51,7 +63,6 @@ class BookUserInterface {
         <p class="bookAuthor">&nbsp;by&nbsp;<b>${book.bookAuthor}.</b></p>
         <button class="remove">Remove</button>
         `;
-
     listBooks.appendChild(bookDisplay);
   }
 
@@ -99,8 +110,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   BookUserInterface.removeBook(e.target);
 
   // Remove book from SavedBooks
-  SavedBooks.removeBook(
-    e.target.previousElementSibling.previousElementSibling.textContent,
-  );
+  SavedBooks.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
 });
 
+// Day 3 : Project update
