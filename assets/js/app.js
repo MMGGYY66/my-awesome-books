@@ -1,13 +1,14 @@
+// 2. navigation menu section
 const bookList = document.querySelector('.book-list-container');
 const listBtn = document.querySelector('.listBtn');
 
 const addNewBtn = document.querySelector('.add-new-btn');
-
 const formContainer = document.querySelector('.form-container');
 
 const contactBtn = document.querySelector('.contact');
 const contactInfo = document.querySelector('.contact-info');
 
+// 1. book class section
 class Book {
   constructor(bookTitle, bookAuthor) {
     this.bookTitle = bookTitle;
@@ -17,7 +18,7 @@ class Book {
 
 let books;
 
-// SavedBooks Class: Handles Storage
+// 3. SavedBooks Class: Handles Storage
 class SavedBooks {
   static getBooks() {
     books = JSON.parse(localStorage.getItem('books')) || [];
@@ -43,17 +44,15 @@ class SavedBooks {
   }
 }
 
-// BookUserInterface Class: Handle BookUserInterface Tasks
+// 4. BookUserInterface Class: Handle BookUserInterface Tasks
 class BookUserInterface {
   static displayBooks() {
     const books = SavedBooks.getBooks();
-
     books.forEach((book) => BookUserInterface.addBookToList(book));
   }
 
   static addBookToList(book) {
     const listBooks = document.querySelector('#book-list');
-
     const bookDisplay = document.createElement('div');
     bookDisplay.className = 'bookList1';
     bookDisplay.innerHTML = `
