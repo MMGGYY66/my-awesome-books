@@ -41,7 +41,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://mmggyy66.github.io/my-awesome-books/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👁 Presentation <a name="presentation"></a>
@@ -72,7 +73,7 @@
 
 ## Deploy my website with github pages":
 
-[link to my-awesome-books: ]()
+[link to my-awesome-books: ](https://mmggyy66.github.io/my-awesome-books/)
 
 ## - Loom video link:
 
